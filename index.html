@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Sheriff | Restaurant Menu Audit — Real Results in 24 Hours</title>
+  <meta name="description" content="Stop guessing. Get a full restaurant menu profitability audit in 24 hours. 30 years, 13 ventures, West Hollywood operator. First page free. Full audit $99.">
+  <meta property="og:title" content="Menu Sheriff | Restaurant Menu Audit — $99, 24 Hours">
+  <meta property="og:description" content="Your menu is losing you money right now. I'll show you exactly where. First page free — no credit card.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --bg:          #0f0d0a;
+      --surface:     #181410;
+      --surface-2:   #201c17;
+      --surface-3:   #2a251e;
+      --border:      rgba(200,160,50,0.18);
+      --gold:        #c8a032;
+      --gold-light:  #e8c060;
+      --gold-dim:    #7a5e1a;
+      --red:         #c0392b;
+      --red-hover:   #a93226;
+      --text:        #ede8df;
+      --text-muted:  #9a9188;
+      --text-faint:  #5a544c;
+      --font-display:'Bebas Neue', Impact, sans-serif;
+      --font-body:   'Inter', system-ui, sans-serif;
+      --radius:      0.75rem;
+      --transition:  180ms cubic-bezier(0.16,1,0.3,1);
+    }
+
+    /* ─── BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.65; font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font: inherit; border: none; background: none; }
+    h1,h2,h3,h4 { text-wrap: balance; line-height: 1.1; }
+    p, li { max-width: 68ch; text-wrap: pretty; }
+    ::selection { background: rgba(200,160,50,0.25); }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+
+    /* ─── LAYOUT ─── */
+    .container { max-width: 1100px; margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+    .container--narrow { max-width: 780px; margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+
+    /* ─── NAV ─── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,13,10,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .nav__logo {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .nav__logo span { color: var(--text-muted); font-size: 0.55em; letter-spacing: 0.12em; font-family: var(--font-body); font-weight: 500; text-transform: uppercase; }
+    .nav__cta {
+      background: var(--red); color: #fff;
+      padding: 0.6rem 1.4rem; border-radius: 999px;
+      font-weight: 700; font-size: 0.875rem;
+      transition: background var(--transition), transform var(--transition);
+      white-space: nowrap;
+    }
+    .nav__cta:hover { background: var(--red-hover); transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: clamp(4rem, 10vw, 8rem) 0 clamp(3rem, 8vw, 6rem);
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200,160,50,0.08) 0%, transparent 70%),
+        var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero__badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(200,160,50,0.1); border: 1px solid var(--border);
+      border-radius: 999px; padding: 0.35rem 1rem;
+      font-size: 0.75rem; font-weight: 700; color: var(--gold-light);
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .hero__badge i { font-size: 0.7rem; }
+    .hero__headline {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 2rem + 6vw, 8rem);
+      line-height: 0.95;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .hero__headline em { color: var(--gold); font-style: normal; }
+    .hero__sub {
+      font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.35rem);
+      color: var(--text-muted);
+      max-width: 56ch;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    .hero__sub strong { color: var(--text); }
+    .hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 3.5rem; }
+    .btn-primary {
+      background: var(--red); color: #fff;
+      padding: 1rem 2.25rem; border-radius: 999px;
+      font-weight: 800; font-size: 1.05rem;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 24px rgba(192,57,43,0.35);
+    }
+    .btn-primary:hover { background: var(--red-hover); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(192,57,43,0.5); }
+    .btn-secondary {
+      background: transparent; color: var(--text-muted);
+      border: 1px solid var(--border); border-radius: 999px;
+      padding: 1rem 2rem; font-weight: 600; font-size: 1rem;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      transition: all var(--transition);
+    }
+    .btn-secondary:hover { color: var(--gold); border-color: var(--gold-dim); }
+    .hero__stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; max-width: 640px; }
+    .hero__stat { padding: 1.25rem 1rem; text-align: center; border-right: 1px solid var(--border); background: var(--surface); }
+    .hero__stat:last-child { border-right: none; }
+    .hero__stat-num { font-family: var(--font-display); font-size: clamp(1.8rem, 1.5rem + 1.2vw, 2.6rem); color: var(--gold); line-height: 1; }
+    .hero__stat-label { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.25rem; font-weight: 500; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* ─── PAIN SECTION ─── */
+    .pain { padding: clamp(4rem, 8vw, 6rem) 0; background: var(--surface); border-bottom: 1px solid var(--border); }
+    .section-label { display: flex; align-items: center; gap: 0.5rem; color: var(--gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
+    .section-label i { font-size: 0.7rem; }
+    .section-title { font-family: var(--font-display); font-size: clamp(2rem, 1rem + 3vw, 3.5rem); color: var(--text); margin-bottom: 1rem; }
+    .section-title em { color: var(--gold); font-style: normal; }
+    .pain__quote {
+      background: var(--surface-2); border-left: 3px solid var(--gold);
+      padding: 1.5rem 2rem; border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 2rem 0 2.5rem;
+    }
+    .pain__quote p { font-size: 1.15rem; color: var(--text); font-style: italic; line-height: 1.7; max-width: 60ch; }
+    .pain__quote cite { display: block; margin-top: 0.75rem; color: var(--gold); font-size: 0.85rem; font-weight: 700; font-style: normal; }
+    .pain__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 1rem; }
+    .pain__card {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+      transition: border-color var(--transition);
+    }
+    .pain__card:hover { border-color: var(--gold-dim); }
+    .pain__card i { color: var(--gold); font-size: 1.2rem; margin-top: 0.15rem; flex-shrink: 0; }
+    .pain__card strong { display: block; color: var(--text); font-weight: 700; margin-bottom: 0.3rem; }
+    .pain__card p { color: var(--text-muted); font-size: 0.9rem; max-width: 100%; }
+
+    /* ─── WHO I AM ─── */
+    .bio { padding: clamp(4rem, 8vw, 7rem) 0; background: var(--bg); border-bottom: 1px solid var(--border); }
+    .bio__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+    @media (max-width: 768px) { .bio__grid { grid-template-columns: 1fr; } }
+    .bio__text { color: var(--text-muted); }
+    .bio__text p { margin-bottom: 1.1rem; line-height: 1.75; }
+    .bio__text p strong { color: var(--text); }
+    .bio__note {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);
+    }
+    .bio__note i { color: var(--gold); margin-right: 0.4rem; }
+    .bio__cards { display: flex; flex-direction: column; gap: 1rem; }
+    .bio__card {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem 1.5rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .bio__card i { color: var(--gold); font-size: 1.2rem; margin-top: 0.1rem; flex-shrink: 0; }
+    .bio__card strong { display: block; color: var(--text); margin-bottom: 0.2rem; font-weight: 700; }
+    .bio__card p { color: var(--text-muted); font-size: 0.875rem; max-width: 100%; }
+
+    /* ─── MODULES ─── */
+    .modules { padding: clamp(4rem, 8vw, 7rem) 0; background: var(--surface); border-bottom: 1px solid var(--border); }
+    .modules__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 1.25rem; margin-top: 3rem; }
+    .module-card {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+    .module-card:hover { transform: translateY(-3px); border-color: var(--gold-dim); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .module-card__num { font-family: var(--font-display); font-size: 2.5rem; color: var(--gold-dim); line-height: 1; margin-bottom: 0.75rem; }
+    .module-card__title { font-weight: 800; font-size: 1.05rem; color: var(--text); margin-bottom: 0.6rem; }
+    .module-card p { color: var(--text-muted); font-size: 0.9rem; max-width: 100%; }
+
+    /* ─── PRICING ─── */
+    .pricing { padding: clamp(4rem, 8vw, 7rem) 0; background: var(--bg); border-bottom: 1px solid var(--border); }
+    .pricing__box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem; padding: clamp(2rem, 5vw, 3.5rem);
+      text-align: center; max-width: 640px; margin-inline: auto;
+    }
+    .pricing__icon { font-size: 3rem; color: var(--gold); margin-bottom: 1rem; }
+    .pricing__headline { font-family: var(--font-display); font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem); color: var(--text); margin-bottom: 0.75rem; }
+    .pricing__amount { font-family: var(--font-display); font-size: clamp(4rem, 3rem + 4vw, 7rem); color: var(--gold); line-height: 1; }
+    .pricing__per { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .pricing__body { color: var(--text-muted); max-width: 50ch; margin-inline: auto; line-height: 1.7; margin-bottom: 1rem; }
+    .pricing__body strong { color: var(--text); }
+    .pricing__note { font-size: 0.8rem; color: var(--text-faint); margin-top: 1.25rem; }
+
+    /* ─── HOW IT WORKS ─── */
+    .steps { padding: clamp(4rem, 8vw, 7rem) 0; background: var(--surface); border-bottom: 1px solid var(--border); }
+    .steps__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 1.25rem; margin-top: 3rem; }
+    .step-card {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center;
+    }
+    .step-card__num { font-family: var(--font-display); font-size: 3.5rem; color: var(--gold); line-height: 1; }
+    .step-card h3 { font-weight: 800; color: var(--text); margin: 0.5rem 0 0.5rem; font-size: 1rem; }
+    .step-card p { color: var(--text-muted); font-size: 0.875rem; max-width: 100%; margin-inline: auto; }
+
+    /* ─── PREVIEW ─── */
+    .preview { padding: clamp(4rem, 8vw, 7rem) 0; background: var(--bg); border-bottom: 1px solid var(--border); }
+    .preview__shell {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 1.25rem; overflow: hidden; max-width: 820px; margin-inline: auto;
+    }
+    .preview__bar {
+      background: var(--surface-2); border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center;
+    }
+    .preview__bar span { font-family: monospace; font-size: 0.8rem; color: var(--text-muted); }
+    .preview__bar .badge { font-size: 0.7rem; color: var(--text-faint); background: var(--surface-3); padding: 0.25rem 0.75rem; border-radius: 999px; border: 1px solid var(--border); }
+    .preview__img { position: relative; }
+    .preview__img img { width: 100%; max-height: 500px; object-fit: contain; background: var(--surface-2); }
+    .preview__blur {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
+      background: linear-gradient(to bottom, transparent, var(--surface) 90%);
+    }
+    .preview__unlock {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      background: rgba(15,13,10,0.92); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 2rem;
+      text-align: center; white-space: nowrap;
+    }
+    .preview__unlock p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; max-width: 100%; }
+    .preview__actions { padding: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; border-top: 1px solid var(--border); }
+
+    /* ─── FORM SECTION ─── */
+    .form-section { padding: clamp(4rem, 8vw, 7rem) 0; background: var(--surface); border-bottom: 1px solid var(--border); }
+    .form-section__top { text-align: center; margin-bottom: 3rem; }
+    .checklist {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem; margin-bottom: 2.5rem; text-align: left;
+    }
+    .checklist h3 { font-weight: 800; color: var(--text); margin-bottom: 1.25rem; font-size: 1rem; }
+    .checklist__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 2rem; }
+    @media (max-width: 560px) { .checklist__grid { grid-template-columns: 1fr; } }
+    .checklist__item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; color: var(--text-muted); }
+    .checklist__item i { color: var(--gold); margin-top: 0.2rem; font-size: 0.75rem; flex-shrink: 0; }
+    .cta-block { text-align: center; }
+    .cta-block p { color: var(--text-muted); font-size: 0.875rem; margin-top: 1rem; max-width: 44ch; margin-inline: auto; }
+    .payment-block {
+      margin-top: 2.5rem; padding: 1.5rem 2rem;
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius); text-align: left;
+    }
+    .payment-block strong { display: block; color: var(--text); font-weight: 700; margin-bottom: 0.5rem; }
+    .payment-block p { color: var(--text-muted); font-size: 0.9rem; max-width: 100%; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.5rem; border-radius: 999px;
+      font-weight: 700; font-size: 0.9rem;
+      border: 1px solid var(--border); color: var(--text-muted);
+      transition: all var(--transition);
+    }
+    .contact-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+    /* ─── BONUS ─── */
+    .bonus { padding: clamp(2.5rem, 5vw, 4rem) 0; background: rgba(200,160,50,0.04); border-bottom: 1px solid var(--border); }
+    .bonus__inner { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; justify-content: center; text-align: center; }
+    .bonus__inner i { font-size: 2.5rem; color: var(--gold); }
+    .bonus__inner p { color: var(--text-muted); font-size: 1rem; max-width: 60ch; }
+    .bonus__inner strong { color: var(--gold-light); }
+
+    /* ─── FOOTER ─── */
+    footer { padding: 2.5rem 0; border-top: 1px solid var(--border); }
+    .footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; }
+    .footer__logo { font-family: var(--font-display); font-size: 1.4rem; color: var(--gold); letter-spacing: 0.05em; }
+    .footer__links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer__links a { color: var(--text-muted); font-size: 0.85rem; transition: color var(--transition); }
+    .footer__links a:hover { color: var(--gold); }
+    .footer__copy { width: 100%; text-align: center; color: var(--text-faint); font-size: 0.78rem; margin-top: 1rem; }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 640px) {
+      .hero__stats { grid-template-columns: repeat(2, 1fr); }
+      .hero__stat:nth-child(2) { border-right: none; }
+      .hero__stat:nth-child(3) { border-top: 1px solid var(--border); }
+      .hero__stat:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+      .preview__unlock { white-space: normal; width: calc(100% - 2rem); }
+    }
+    @media (max-width: 480px) {
+      .hero__actions { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <div class="nav__logo">
+        <!-- SVG Sheriff Star Logo -->
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-label="Menu Sheriff logo" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2 L19.5 11.5 L30 11.5 L21.5 17.5 L24.5 27 L16 21 L7.5 27 L10.5 17.5 L2 11.5 L12.5 11.5 Z" fill="#c8a032" stroke="#e8c060" stroke-width="0.5"/>
+          <circle cx="16" cy="16" r="4.5" fill="#0f0d0a" stroke="#c8a032" stroke-width="1"/>
+          <text x="16" y="20" text-anchor="middle" font-size="5.5" fill="#c8a032" font-family="serif" font-weight="bold">M</text>
+        </svg>
+        MENU SHERIFF <span>· Est. 30 Years</span>
+      </div>
+      <a href="#form-section" class="nav__cta">Get Free Audit Page →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__badge"><i class="fas fa-star"></i> Menu Profitability Audit · Real Operator · 30 Years</div>
+    <h1 class="hero__headline reveal">
+      YOUR MENU IS<br>
+      <em>LOSING</em><br>
+      YOU MONEY.
+    </h1>
+    <p class="hero__sub reveal">
+      Not because the food is bad.<br>
+      Because <strong>nobody engineered the menu.</strong><br>
+      Send it to me. I'll show you exactly where the money is going — in 24 hours.
+    </p>
+    <div class="hero__actions reveal">
+      <a href="#form-section" class="btn-primary"><i class="fas fa-clipboard-list"></i> Start Free — First Page on Me</a>
+      <a href="#preview" class="btn-secondary"><i class="fas fa-eye"></i> See a Sample Audit</a>
+    </div>
+    <div class="hero__stats reveal">
+      <div class="hero__stat"><div class="hero__stat-num">30+</div><div class="hero__stat-label">Years in the Business</div></div>
+      <div class="hero__stat"><div class="hero__stat-num">13</div><div class="hero__stat-label">Ventures Owned</div></div>
+      <div class="hero__stat"><div class="hero__stat-num">3</div><div class="hero__stat-label">WeHo Locations</div></div>
+      <div class="hero__stat"><div class="hero__stat-num">$99</div><div class="hero__stat-label">Full Audit</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="container">
+    <div class="section-label"><i class="fas fa-comment-dots"></i> The Problem With "Consulting"</div>
+    <h2 class="section-title reveal">Your menu tells me <em>everything.</em><br>I translate it into money.</h2>
+    <div class="pain__quote reveal">
+      <p>"I don't analyze dishes — I analyze how your business makes money. And that is different from everything you've seen before."</p>
+      <cite>— Yoram K., 30 years in the trenches</cite>
+    </div>
+    <div class="pain__grid reveal">
+      <div class="pain__card"><i class="fas fa-hourglass-half"></i><div><strong>Endless "Discovery" Meetings</strong><p>An hour on their methodology. Another on your backstory. Your menu still hasn't been touched.</p></div></div>
+      <div class="pain__card"><i class="fas fa-file-signature"></i><div><strong>40-Question Intake Forms</strong><p>Two weeks of back-and-forth before you get a single actionable recommendation.</p></div></div>
+      <div class="pain__card"><i class="fas fa-quote-right"></i><div><strong>Generic Advice Anyone Can Google</strong><p>"Know your customer." "Improve your service." Paid $3,000 for a PDF of clichés.</p></div></div>
+      <div class="pain__card"><i class="fas fa-coins"></i><div><strong>$5,000–$15,000 for a Starting Engagement</strong><p>Before a single dollar hits your register differently. I charge $99 for the full audit. First page is free.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section class="bio">
+  <div class="container">
+    <div class="section-label"><i class="fas fa-user-check"></i> The Operator Behind the Audit</div>
+    <h2 class="section-title reveal">Not a Consultant. <em>An Operator.</em></h2>
+    <div class="bio__grid reveal">
+      <div class="bio__text">
+        <p>I didn't study hospitality in a classroom. I built it — on Robertson Avenue in West Hollywood, and in two other Los Angeles locations before that. One property was a large-format space. Real rent, real overhead, real margins that had to work.</p>
+        <p>Across <strong>30 years and 13 different ventures</strong> — bars, clubs, cafes, full-service restaurants — I've seen the same pattern destroy operators who had great food, great locations, and no system. A menu that worked against them. A kitchen bleeding steps. Staff who were never taught to sell.</p>
+        
+        <p>I took all of that — every blueprint, P&L, staffing model, and operational fix — and put it into a book: <strong>"The Cafe & Restaurant Blueprint."</strong> And now that same knowledge, combined with AI analysis tools, is what powers every Menu Sheriff audit you receive.</p>
+        <div class="bio__note"><i class="fas fa-handshake"></i> <strong>Need more than a report?</strong> Deep-dive consulting, crisis management, and in-person sessions are available — reach out directly if the situation calls for it.</div>
+      </div>
+      <div class="bio__cards">
+        <div class="bio__card"><i class="fas fa-crown"></i><div><strong>13 Ventures — Full Ownership</strong><p>Bars, clubs, cafes, and restaurants. Every one of them built from scratch, not inherited or managed for someone else.</p></div></div>
+        <div class="bio__card"><i class="fas fa-map-marker-alt"></i><div><strong>West Hollywood Operator</strong><p>3 establishments in WeHo, including a large flagship on Robertson Ave. I know what LA rent does to margins.</p></div></div>
+        <div class="bio__card"><i class="fas fa-users-cog"></i><div><strong>Multi-Location Operations</strong><p>Managed district-level performance, brand consistency, and quality standards across multiple locations simultaneously.</p></div></div>
+        <div class="bio__card" style="border-color: var(--gold-dim); background: rgba(200,160,50,0.06);"><i class="fas fa-shield-alt" style="color:var(--gold);"></i><div><strong style="color:var(--gold-light);">The Human-in-the-Loop Guarantee</strong><p>AI tools run the initial analysis. Then I — Yoram K., 30 years on the floor, 3 West Hollywood locations — read every line, challenge every assumption, and sign off on every report. You're not getting an algorithm. You're getting street wisdom with a processing advantage.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules">
+  <div class="container">
+    <div class="section-label"><i class="fas fa-cube"></i> What You Get</div>
+    <h2 class="section-title reveal">The Sheriff Profit Report —<br><em>6 Modules. One Document.</em></h2>
+    <p style="color:var(--text-muted); max-width:55ch; margin-top:0.75rem;" class="reveal">A fixed structure. No surprises. Every audit delivers the same six-module report plus a 90-day action plan.</p>
+    <div class="modules__grid reveal">
+      <div class="module-card"><div class="module-card__num">01</div><h3 class="module-card__title">Menu Engineering Matrix</h3><p>Stars, Plowhorses, Puzzles, Dogs — where is your money trapped? What to kill, what to protect, what to push.</p></div>
+      <div class="module-card"><div class="module-card__num">02</div><h3 class="module-card__title">Psychological Pricing Audit</h3><p>Price anchoring, the Pain of Paying, dollar-sign removal — proven techniques that raise your average check without the customer noticing.</p></div>
+      <div class="module-card"><div class="module-card__num">03</div><h3 class="module-card__title">Profit Leak Detection</h3><p>The silent bleeding: hidden costs, wasteful items, operational drains. Named. Located. Quantified.</p></div>
+      <div class="module-card"><div class="module-card__num">04</div><h3 class="module-card__title">Kitchen Efficiency Review</h3><p>Workflow analysis, BOH ergonomics, the Arms Reach Rule — reducing steps is reducing cost at every single service.</p></div>
+      <div class="module-card"><div class="module-card__num">05</div><h3 class="module-card__title">Upsell & Bundle Map</h3><p>Which items pair strategically for higher ticket value? Where should they sit on the menu to get noticed?</p></div>
+      <div class="module-card"><div class="module-card__num">06</div><h3 class="module-card__title">30–60–90 Day Action Plan</h3><p>What to fix this week. What to tackle next month. What to build over the quarter. A real roadmap — not a PDF of ideas.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HUMAN IN THE LOOP -->
+<section style="padding: clamp(3rem, 6vw, 5rem) 0; background: var(--surface-2); border-bottom: 1px solid var(--border);">
+  <div class="container--narrow">
+    <div style="background: linear-gradient(135deg, rgba(200,160,50,0.08) 0%, transparent 60%), var(--surface); border: 1px solid var(--gold-dim); border-radius: 1.25rem; padding: clamp(2rem, 5vw, 3.5rem); text-align:center;" class="reveal">
+      <div style="display:inline-flex; align-items:center; justify-content:center; width:72px; height:72px; border-radius:50%; border:2px solid var(--gold); margin-bottom:1.5rem;">
+        <svg width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 2 L19.5 11.5 L30 11.5 L21.5 17.5 L24.5 27 L16 21 L7.5 27 L10.5 17.5 L2 11.5 L12.5 11.5 Z" fill="#c8a032"/>
+          <circle cx="16" cy="16" r="4.5" fill="#181410" stroke="#c8a032" stroke-width="1"/>
+        </svg>
+      </div>
+      <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem;">The Human-in-the-Loop Guarantee</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem, 1.2rem + 2.5vw, 3rem); color:var(--text); margin-bottom:1rem; line-height:1.05;">AI Does the Math.<br><span style="color:var(--gold);">The Sheriff Signs the Report.</span></h2>
+      <p style="color:var(--text-muted); max-width:54ch; margin:0 auto 1.25rem; line-height:1.75; font-size:1.05rem;">
+        Yes, I use AI analysis tools. They're fast, precise, and powerful. But your report does not leave my desk until <strong style="color:var(--text);">I have personally read every finding, challenged every number, and added the judgment that only comes from 30 years on the floor.</strong>
+      </p>
+      <p style="color:var(--text-muted); max-width:52ch; margin:0 auto 2rem; line-height:1.75;">
+        I opened venues in West Hollywood when Robertson Ave. was a proving ground. I've managed service at scale, fixed broken kitchens mid-service, rebuilt after losses, and watched what actually moves the needle versus what sounds good in a slide deck. That's the lens your menu goes through — not a chatbot's.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
+        <div style="display:flex; align-items:center; gap:0.6rem; font-size:0.875rem; color:var(--text-muted);"><i class="fas fa-robot" style="color:var(--gold-dim);"></i> AI scans & structures the data</div>
+        <div style="color:var(--gold-dim); font-size:1.2rem;">→</div>
+        <div style="display:flex; align-items:center; gap:0.6rem; font-size:0.875rem; color:var(--text-muted);"><i class="fas fa-user-check" style="color:var(--gold);"></i> Yoram reviews & rewrites</div>
+        <div style="color:var(--gold-dim); font-size:1.2rem;">→</div>
+        <div style="display:flex; align-items:center; gap:0.6rem; font-size:0.875rem; color:var(--text);"><i class="fas fa-file-signature" style="color:var(--gold);"></i> <strong>You receive a signed-off report</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="container">
+    <div class="pricing__box reveal">
+      <div class="pricing__icon"><i class="fas fa-bolt"></i></div>
+      <h2 class="pricing__headline">$99 is not a consulting fee.</h2>
+      <div class="pricing__amount">$99</div>
+      <div class="pricing__per">Full 6-Module Audit · Delivered in 24 Hours</div>
+      <p class="pricing__body">A traditional menu consultant charges <strong>$5,000–$15,000</strong> to tell you what I'll put in your inbox tomorrow. I'm not interested in retainers. I'm interested in proving — fast and cheap — that a real audit changes real numbers. If it does, you'll know where to find me next time.</p>
+      <p class="pricing__body" style="margin-top:0.75rem;"><strong>The first page is completely free.</strong> No credit card. No commitment. You see it, you decide. Only then do I ask for $99.</p>
+      <div class="pricing__note">* First page delivered free within 24 hours of form submission. Full audit unlocked after optional payment.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps" id="process">
+  <div class="container">
+    <div class="section-label"><i class="fas fa-chalkboard"></i> The Process</div>
+    <h2 class="section-title reveal">Four Steps. <em>That's It.</em></h2>
+    <div class="steps__grid reveal">
+      <div class="step-card"><div class="step-card__num">1</div><h3>Fill the Form</h3><p>Short intake + your menu photo (required) + kitchen/space photos (optional).</p></div>
+      <div class="step-card"><div class="step-card__num">2</div><h3>Get Page One Free</h3><p>Within 24 hours — a real first page of your audit. No credit card required.</p></div>
+      <div class="step-card"><div class="step-card__num">3</div><h3>Decide</h3><p>Like what you see? Pay $99 via PayPal. Don't? You owe nothing.</p></div>
+      <div class="step-card"><div class="step-card__num">4</div><h3>Full Report + Bonus</h3><p>All 6 modules + 90-day plan + the book "The Cafe Blueprint" — free with your audit.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PREVIEW -->
+<section class="preview" id="preview">
+  <div class="container">
+    <div class="section-label"><i class="fas fa-eye"></i> Sample Audit</div>
+    <h2 class="section-title reveal" style="text-align:center;">This Is What <em>Page One</em> Looks Like</h2>
+    <p style="color:var(--text-muted); text-align:center; max-width:52ch; margin:0.75rem auto 2.5rem;" class="reveal">A real first page from a real audit. The rest? That's what the $99 unlocks.</p>
+    <div class="preview__shell reveal">
+      <div class="preview__bar">
+        <span>📊 Menu Sheriff Audit — Sample Report (Page 1 Preview)</span>
+        <span class="badge">Preview Only</span>
+      </div>
+      <div class="preview__img">
+        <img src="manu.jpg" alt="Menu Sheriff sample audit report page one preview" width="820" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/menuaudit/820/500'">
+        <div class="preview__blur"></div>
+        <div class="preview__unlock">
+          <p>Pages 2–6 unlocked after payment</p>
+          <a href="#form-section" class="btn-primary" style="font-size:0.9rem; padding:0.7rem 1.5rem;"><i class="fas fa-lock-open"></i> Start Free Now</a>
+        </div>
+      </div>
+      <div class="preview__actions">
+        <a href="menu.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="font-size:0.875rem; padding:0.7rem 1.5rem;"><i class="fas fa-file-pdf"></i> Open Sample PDF</a>
+        <a href="#form-section" class="btn-primary" style="font-size:0.875rem; padding:0.7rem 1.5rem;"><i class="fas fa-arrow-right"></i> Get My Free Page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="form-section">
+  <div class="container--narrow">
+    <div class="form-section__top">
+      <div class="section-label" style="justify-content:center;"><i class="fas fa-clipboard-list"></i> Start Here — No Credit Card</div>
+      <h2 class="section-title reveal">Submit Your Menu.<br><em>Get Page One Free</em> in 24 Hours.</h2>
+      <p style="color:var(--text-muted); margin:1rem auto 0; max-width:50ch;">No credit card. No commitment. Just your menu and a few quick details.</p>
+    </div>
+    <div class="checklist reveal">
+      <h3><i class="fas fa-list-ul" style="color:var(--gold); margin-right:0.5rem;"></i> What the form asks:</h3>
+      <div class="checklist__grid">
+        <div class="checklist__item"><i class="fas fa-check"></i><span>Business name & location</span></div>
+        <div class="checklist__item"><i class="fas fa-check"></i><span>How long have you been open?</span></div>
+        <div class="checklist__item"><i class="fas fa-check"></i><span>Seating capacity</span></div>
+        <div class="checklist__item"><i class="fas fa-check"></i><span>Staff count at peak shift</span></div>
+        <div class="checklist__item"><i class="fas fa-check"></i><span>Primary customer type</span></div>
+        <div class="checklist__item"><i class="fas fa-check"></i><span>Current main goal (profit / efficiency / growth)</span></div>
+        <div class="checklist__item"><i class="fas fa-check"></i><span>Your 3 best-selling items</span></div>
+        <div class="checklist__item"><i class="fas fa-check"></i><span>Menu photo upload (required)</span></div>
+        <div class="checklist__item"><i class="fas fa-check"></i><span>Kitchen / space photos (optional)</span></div>
+        <div class="checklist__item"><i class="fas fa-check"></i><span>Anything else you want to flag</span></div>
+      </div>
+    </div>
+    <div class="cta-block reveal">
+      <a href="https://tally.so/r/lbWprX" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:1.1rem; padding:1.15rem 2.75rem;">
+        <i class="fas fa-external-link-alt"></i> Open the Intake Form
+      </a>
+      <p>Secure form. After I receive your details, the first audit page arrives within 24 hours — free.</p>
+    </div>
+    <div class="payment-block reveal">
+      <strong><i class="fas fa-credit-card" style="color:var(--gold); margin-right:0.5rem;"></i> Payment — Only If You Want the Full Report</strong>
+      <p>After you receive your free first page, if you'd like all 6 modules + the 90-day plan, I'll send you a payment link. Accepted methods: <strong>PayPal.</strong> No subscription, no auto-charge, no hidden fees.</p>
+    </div>
+    <div class="contact-row reveal">
+      <a href="mailto:cafe@aimuseai.com" class="contact-btn"><i class="fas fa-envelope"></i> cafe@aimuseai.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="bonus">
+  <div class="container">
+    <div class="bonus__inner">
+      <i class="fas fa-gift"></i>
+      <p>📘 Every paid audit includes a free copy of <strong>"The Cafe & Restaurant Blueprint"</strong> (PDF) — 7 chapters, 30 years of hard-earned operating systems. Written by the same operator who just audited your menu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__logo">MENU SHERIFF</div>
+      <div class="footer__links">
+        <a href="#process">How It Works</a>
+        <a href="#preview">Sample Audit</a>
+        <a href="#form-section">Get Started</a>
+        <a href="mailto:cafe@aimuseai.com">Contact</a>
+      </div>
+    </div>
+    <p class="footer__copy">© 2026 Yoram K. — Menu Sheriff | Restaurant Menu Profitability Audit. 30 years in the business. One operator behind every report.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
